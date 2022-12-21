@@ -19,5 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "noImplicitReturns": true,
     "esModuleInterop": true
-  }
+  },
+    
+  "include": ["src", "test"]
 }
