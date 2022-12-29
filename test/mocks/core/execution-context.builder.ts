@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createMock, DeepMocked } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
-import Constants from '../../constants';
+import Constants from 'test/constants';
 
 export default class ExecutionContextBuilder {
   private executionContext: DeepMocked<ExecutionContext>;

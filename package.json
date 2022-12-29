@@ -86,6 +86,9 @@
     "coveragePathIgnorePatterns": [
       "./src/main.ts",
       "./src/app.module.ts"
+    ],
+    "modulePaths": [
+      "<rootDir>"
     ]
   }
 }

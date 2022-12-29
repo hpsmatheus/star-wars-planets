@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
-import ApiExceptionTyping from '../../typings/api-exception.typing.entity';
+import ApiExceptionTyping from 'src/typings/api-exception.typing.entity';
 import { EErrorCode } from './error-code.enum';
 
 export default class ApiException extends HttpException {

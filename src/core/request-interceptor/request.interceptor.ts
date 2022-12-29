@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 
 import RequestLogger from './logger';
 import RequestContextBuilder from './request-context.builder';
-import ApiException from '../error/api-exception';
+import ApiException from 'src/core/error/api-exception';
 
 export default class RequestInterceptor implements NestInterceptor {
   private logger: RequestLogger;

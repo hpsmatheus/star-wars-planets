@@ -1,9 +1,9 @@
-import RequestLogger from '../../../../src/core/request-interceptor/logger';
-import RequestContext from '../../../../src/typings/request-context';
+import RequestLogger from 'src/core/request-interceptor/logger';
+import RequestContext from 'src/typings/request-context';
 import { Logger } from '@nestjs/common';
 import { formatISO } from 'date-fns';
-import ApiException from '../../../../src/core/error/api-exception';
-import MockRequestContextBuilder from '../../../mocks/core/mock-request-context.builder';
+import ApiException from 'src/core/error/api-exception';
+import MockRequestContextBuilder from 'test/mocks/core/mock-request-context.builder';
 
 describe('Request logger', () => {
   let requestLogger: RequestLogger;

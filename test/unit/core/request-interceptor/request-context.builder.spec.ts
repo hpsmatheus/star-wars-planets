@@ -1,8 +1,8 @@
 import * as uuid from 'uuid';
-import Constants from '../../../constants';
-import RequestContextBuilder from '../../../../src/core/request-interceptor/request-context.builder';
-import MockRequestContextBuilder from '../../../mocks/core/mock-request-context.builder';
-import ExecutionContextBuilder from '../../../mocks/core/execution-context.builder';
+import Constants from 'test/constants';
+import RequestContextBuilder from 'src/core/request-interceptor/request-context.builder';
+import MockRequestContextBuilder from 'test/mocks/core/mock-request-context.builder';
+import ExecutionContextBuilder from 'test/mocks/core/execution-context.builder';
 jest.mock('uuid');
 describe('Request Context Builder', () => {
   beforeEach(() => {
