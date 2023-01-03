@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import ApiException from 'src/core/error/api-exception';
 import Pageable from 'src/typings/pageable.entity';
 import CreatePlanetInput from 'src/typings/planet/create-planet.input.dto';
 import Planet from 'src/typings/planet/planet.entity';
@@ -52,6 +53,12 @@ export default class PlanetService {
       take: maxRecordsPerPage,
     });
     return { result, page };
+  }
+
+  public async findById(id: number): Promise<Planet> {
+    const result = await this.repository.findOneBy({ id });
+    if (!result) throw ApiException.notFound('planet not found');
+    return result;
   }
 
   private async createMany(planets: CreatePlanetInput[]): Promise<void> {
