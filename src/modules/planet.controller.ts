@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Query } from '@nestjs/common';
 import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { SwaggerResponse } from 'src/core/swagger-response';
 import Pageable from 'src/typings/pageable.entity';
@@ -33,5 +33,13 @@ export default class PlanetController {
   @ApiResponse(SwaggerResponse.InternalError)
   public async findById(@Param('id') id: number): Promise<Planet> {
     return this.planetService.findById(id);
+  }
+
+  @Delete(':id')
+  @ApiResponse(SwaggerResponse.Ok())
+  @ApiResponse(SwaggerResponse.NotFound)
+  @ApiResponse(SwaggerResponse.InternalError)
+  public async delete(@Param('id') id: number): Promise<void> {
+    await this.planetService.delete(id);
   }
 }

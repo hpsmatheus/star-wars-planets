@@ -55,13 +55,18 @@ export default class PlanetService {
     return { result, page };
   }
 
+  private async createMany(planets: CreatePlanetInput[]): Promise<void> {
+    await Promise.all(planets.map((planet) => this.repository.save(planet)));
+  }
+
   public async findById(id: number): Promise<Planet> {
     const result = await this.repository.findOneBy({ id });
     if (!result) throw ApiException.notFound('planet not found');
     return result;
   }
 
-  private async createMany(planets: CreatePlanetInput[]): Promise<void> {
-    await Promise.all(planets.map((planet) => this.repository.save(planet)));
+  public async delete(id: number): Promise<void> {
+    const result = await this.repository.delete({ id });
+    if (result.affected === 0) throw ApiException.notFound('planet not found');
   }
 }
