@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import PlanetModule from './modules/planet.module';
+import ormconfig from './ormconfig';
 
 @Module({
-  imports: [ConfigModule.forRoot()],
+  imports: [TypeOrmModule.forRoot(ormconfig), PlanetModule],
   controllers: [],
   providers: [],
 })

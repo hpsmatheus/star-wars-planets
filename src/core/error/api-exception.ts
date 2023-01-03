@@ -16,6 +16,15 @@ export default class ApiException extends HttpException {
     });
   }
 
+  static notFound(message?: string, data?: unknown | never): ApiException {
+    return new ApiException({
+      errorCode: EErrorCode.NOT_FOUND,
+      statusCode: HttpStatus.NOT_FOUND,
+      message: message ?? 'resource not found',
+      data: data ?? {},
+    });
+  }
+
   public static parseError(error: any): ApiException {
     return new ApiException({
       statusCode: this.getStatusCodeFrom(error),

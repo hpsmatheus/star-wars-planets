@@ -13,16 +13,6 @@ function ok(
   };
 }
 
-function created(
-  type?: Type<unknown> | Function | [Function] | string,
-): ApiResponseOptions {
-  return {
-    status: HttpStatus.CREATED,
-    description: 'success',
-    type,
-  };
-}
-
 const inputValidationError: ApiResponseOptions = {
   status: HttpStatus.BAD_REQUEST,
   description: 'input validation error',
@@ -35,9 +25,15 @@ const internalError: ApiResponseOptions = {
   type: ApiExceptionTyping,
 };
 
+const notFound: ApiResponseOptions = {
+  status: HttpStatus.NOT_FOUND,
+  description: 'not found',
+  type: ApiExceptionTyping,
+};
+
 export const SwaggerResponse = {
   Ok: ok,
-  Created: created,
   InputValidationError: inputValidationError,
   InternalError: internalError,
+  NotFound: notFound,
 };
