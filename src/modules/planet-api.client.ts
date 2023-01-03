@@ -7,7 +7,7 @@ import GetPlanetApiResponse from 'src/typings/planet/planet-api.client.response.
 @Injectable()
 export default class PlanetApiClient {
   private get url(): string {
-    return 'https://swapi.dev/api/planets';
+    return process.env.PLANET_API;
   }
 
   public async list(name: string): Promise<CreatePlanetInput[]> {
