@@ -61,12 +61,12 @@ export default class PlanetService {
 
   public async findById(id: number): Promise<Planet> {
     const result = await this.repository.findOneBy({ id });
-    if (!result) throw ApiException.notFound('planet not found');
+    if (!result) throw ApiException.notFound('Planet not found');
     return result;
   }
 
   public async delete(id: number): Promise<void> {
     const result = await this.repository.delete({ id });
-    if (result.affected === 0) throw ApiException.notFound('planet not found');
+    if (result.affected === 0) throw ApiException.notFound('Planet not found');
   }
 }
