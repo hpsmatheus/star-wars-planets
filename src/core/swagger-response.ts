@@ -31,9 +31,16 @@ const notFound: ApiResponseOptions = {
   type: ApiExceptionTyping,
 };
 
+const unauthenticated: ApiResponseOptions = {
+  status: HttpStatus.UNAUTHORIZED,
+  description: 'unauthenticated',
+  type: ApiExceptionTyping,
+};
+
 export const SwaggerResponse = {
   Ok: ok,
   InputValidationError: inputValidationError,
   InternalError: internalError,
   NotFound: notFound,
+  Unauthenticated: unauthenticated,
 };

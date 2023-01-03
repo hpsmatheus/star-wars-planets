@@ -12,6 +12,7 @@ async function bootstrap(): Promise<void> {
   const options = new DocumentBuilder()
     .setTitle('Star Wars Planets')
     .setDescription('Backend Engineer Challenge')
+    .addApiKey({ name: 'x-api-key', type: 'apiKey', in: 'header' }, 'x-api-key')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-docs', app, document);

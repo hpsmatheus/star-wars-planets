@@ -25,6 +25,18 @@ export default class ApiException extends HttpException {
     });
   }
 
+  static unauthenticated(
+    message?: string,
+    data?: unknown | never,
+  ): ApiException {
+    return new ApiException({
+      errorCode: EErrorCode.UNAUTHENTICATED,
+      statusCode: HttpStatus.UNAUTHORIZED,
+      message: message ?? 'user is not authenticated',
+      data: data ?? {},
+    });
+  }
+
   public static parseError(error: any): ApiException {
     return new ApiException({
       statusCode: this.getStatusCodeFrom(error),
