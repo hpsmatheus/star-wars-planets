@@ -89,7 +89,9 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "./src/main.ts",
-      "./src/app.module.ts"
+      "./src/app.module.ts",
+      "./src/migrations/*",
+      "./src/ormconfig.ts"
     ],
     "modulePaths": [
       "<rootDir>"
