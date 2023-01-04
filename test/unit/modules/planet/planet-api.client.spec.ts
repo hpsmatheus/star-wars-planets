@@ -2,7 +2,7 @@ import { HttpStatus } from '@nestjs/common';
 import axios from 'axios';
 import ApiException from 'src/core/error/api-exception';
 import { EErrorCode } from 'src/core/error/error-code.enum';
-import PlanetApiClient from 'src/modules/planet-api.client';
+import PlanetApiClient from 'src/modules/planet/planet-api.client';
 import Constants from 'test/constants';
 import { createPlanetInputMock } from 'test/mocks/modules/planet/create-planet.input.mock';
 import { getPlanetApiResponseMock } from 'test/mocks/modules/planet/planet-api.client.response.mock';

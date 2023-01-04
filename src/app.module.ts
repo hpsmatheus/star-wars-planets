@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import PlanetModule from './modules/planet.module';
+import PlanetModule from './modules/planet/planet.module';
 import ormconfig from './ormconfig';
 
 @Module({
